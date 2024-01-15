@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="icon" href="icon.ico" type="image/x-icon">
     <meta charset="UTF-8">
@@ -17,6 +18,36 @@
     <meta property="og:image:height" content="250">
 
     <style>
+        #nowPlaying {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #565656;
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            border: 3px solid #444;
+        }
+
+        #trackInfo {
+            display: flex;
+            align-items: center;
+        }
+
+        #albumImage {
+            margin-right: 10px;
+            border-radius: 30%;
+        }
+
+        #details {
+            color: #fff;
+        }
+
+        #details p {
+            margin: 0;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -32,7 +63,10 @@
             height: 100vh;
         }
 
-        #icon, #name, .main, .button-container {
+        #icon,
+        #name,
+        .main,
+        .button-container {
             opacity: 0;
             position: absolute;
             color: #ffffff;
@@ -56,36 +90,36 @@
 
         .main {
             font-size: 1.5em;
-            top: 60%; /* Zmieniłem na 60% dla więcej przestrzeni */
+            top: 53%;
             left: 50%;
             transform: translate(-50%, -50%);
             animation: fadeInElement 1s ease-out 5s forwards;
         }
 
         .button-container {
-            top: 70%; /* Zmieniłem na 70% dla więcej przestrzeni */
+            top: 30%;
             left: 50%;
             transform: translate(-50%, -50%);
             display: flex;
             gap: 10px;
             animation: fadeInButtons 1s ease-out 5s forwards;
         }
-      
-      .ico {
-        margin-right: 5px;
-      }
+
+        .ico {
+            margin-right: 5px;
+        }
 
         .button {
-            padding: 8px 15px; /* Zmniejszyłem rozmiar przycisków */
-            border: 3px solid #444; /* Dodatkowa ramka */
+            padding: 8px 15px;
+            border: 3px solid #444;
             background-color: #565656;
             color: #ffffff;
-            font-size: 0.6em; /* Zmniejszyłem rozmiar czcionki */
+            font-size: 0.6em;
             cursor: pointer;
             transition: background-color 0.3s ease, border-color 0.3s ease;
             opacity: 0.7;
             border-radius: 8px;
-             display: flex;
+            display: flex;
             align-items: center;
         }
 
@@ -201,52 +235,94 @@
             height: 100%;
             z-index: -1;
         }
-
     </style>
 </head>
+
 <body>
     <div id="container">
-        <img id="icon" class="round" src="https://cdn.discordapp.com/attachments/790180476001320960/1189299417489100990/8A39FCAF-DB43-4498-A584-9B1B0990552C.gif" width="96px" height="96px">
+        <img id="icon" class="round"
+            src="https://cdn.discordapp.com/attachments/790180476001320960/1189299417489100990/8A39FCAF-DB43-4498-A584-9B1B0990552C.gif"
+            width="96px" height="96px">
         <h1 id="name">roaxxxx</h1>
     </div>
     <div class="main">
         <div class="button-container">
             <a class="button" href="https://discord.gg/dolina">
-                <img class="ico" src="https://preview.redd.it/e3q5jovld7p61.png?width=1920&format=png&auto=webp&s=9cd2ac452037c9a6d346279cd14ead25a58ad971" width="18px"> Server
+                <img class="ico"
+                    src="https://preview.redd.it/e3q5jovld7p61.png?width=1920&format=png&auto=webp&s=9cd2ac452037c9a6d346279cd14ead25a58ad971"
+                    width="18px"> Server
             </a>
             <a class="button" href="https://discord.com/users/388939705464389644">
-                <img class="ico" src="https://preview.redd.it/e3q5jovld7p61.png?width=1920&format=png&auto=webp&s=9cd2ac452037c9a6d346279cd14ead25a58ad971" width="18px">
-                Profile
+                <img class="ico"
+                    src="https://preview.redd.it/e3q5jovld7p61.png?width=1920&format=png&auto=webp&s=9cd2ac452037c9a6d346279cd14ead25a58ad971"
+                    width="18px"> Profile
             </a>
             <a class="button" href="https://instagram.com/rxaxxo">
-                <img class="ico" src="http://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" width="17px">
-                Instagram
+                <img class="ico" src="http://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+                    width="17px"> Instagram
             </a>
         </div>
     </div>
     <div id="particles-background"></div>
 
+    <div id="nowPlaying">
+        <div id="trackInfo">
+            <img id="albumImage" class="round" alt="Album Cover" style="width: 30px; height: 30px;">
+            <div id="details">
+                <p id="trackName"></p>
+                <p id="artistName"></p>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS("particles-background", {
             particles: {
-                number: { value: 100, density: { enable: true, value_area: 800 } },
-                color: { value: "#ffffff" },
+                number: {
+                    value: 100,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#ffffff"
+                },
                 shape: {
                     type: "circle",
-                    stroke: { width: 0, color: "#000000" },
-                    polygon: { nb_sides: 5 },
-                    image: { src: "img/github.svg", width: 100, height: 100 },
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 5
+                    },
+                    image: {
+                        src: "img/github.svg",
+                        width: 100,
+                        height: 100
+                    },
                 },
                 opacity: {
                     value: 0.5,
                     random: true,
-                    anim: { enable: true, speed: 1, opacity_min: 0, sync: false },
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0,
+                        sync: false
+                    },
                 },
                 size: {
                     value: 3,
                     random: true,
-                    anim: { enable: false, speed: 4, size_min: 0.3, sync: false },
+                    anim: {
+                        enable: false,
+                        speed: 4,
+                        size_min: 0.3,
+                        sync: false
+                    },
                 },
                 line_linked: {
                     enable: false,
@@ -263,29 +339,58 @@
                     straight: false,
                     out_mode: "out",
                     bounce: false,
-                    attract: { enable: false, rotateX: 600, rotateY: 1200 },
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    },
                 },
             },
             interactivity: {
                 detect_on: "canvas",
                 events: {
-                    onhover: { enable: true, mode: "repulse" },
-                    onclick: { enable: true, mode: "push" },
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
                     resize: true,
                 },
                 modes: {
-                    grab: { distance: 400, line_linked: { opacity: 1 } },
-                    bubble: { distance: 400, size: 50, duration: 2, opacity: 10, speed: 3 },
-                    repulse: { distance: 200, duration: 0.4 },
-                    push: { particles_nb: 4 },
-                    remove: { particles_nb: 2 },
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 50,
+                        duration: 2,
+                        opacity: 10,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    },
                 },
             },
             retina_detect: true,
         });
     </script>
-    <footer>     
+    <footer>
         <p>© 2023 roax.space - All rights reserved.</p>
     </footer>
 </body>
+
 </html>
