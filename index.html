@@ -4,114 +4,194 @@
     <link rel="icon" href="icon.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>roaxx</title>
+    <title>roaxxxx</title>
     <meta name="title" content="roaxx">
-    <meta name="description" content="jus me">
+    <meta name="description" content="just me">
 
-    
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://roax.space">
-    <meta property="og:title" content="roaxx">
-    <meta property="og:description" content="jus me">
-    <meta property="og:image" content="https://i.pinimg.com/736x/a6/83/21/a683218dc7bc13c2ef15725d3b128729.jpg">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="250">
-<meta property="og:image:height" content="250">
+    <meta property="og:title" content="roaxxxx">
+    <meta property="og:description" content="@just me">
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/790180476001320960/1189299417489100990/8A39FCAF-DB43-4498-A584-9B1B0990552C.gif">
+    <meta property="og:image:width" content="250">
+    <meta property="og:image:height" content="250">
 
     <style>
-      
-
-
-        
- * {
-    scrollbar-width: thin;
-    scrollbar-color: #2C2C2C #4E4E4E;
- }
- 
-
-*::-webkit-scrollbar {
-  height: 10px;
-  width: 10px;
-}
-*::-webkit-scrollbar-track {
-  border-radius: 5px;
-  background-color: #4E4E4E;
-}
-
-*::-webkit-scrollbar-track:hover {
-  background-color: #494C4D;
-}
-
-*::-webkit-scrollbar-track:active {
-  background-color: #65696A;
-}
-
-*::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: #2C2C2C;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background-color: #383838;
-}
-
-*::-webkit-scrollbar-thumb:active {
-  background-color: #3B3B3B;
-}
-
-              .button-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          
-        }
-
-
-      .button1 {
-  line-height: 1;
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 18px;
-  border-radius: 15px;
-  width: 200px;
-  height: 50px;
-  font-weight: bold;
-  border: 3px solid #4b4cff;
-  transition: 0.3s;
-  background-color: #000a51;
-  text-align: center;
-}
-
-.button1:hover {
-  transform: scale(1.05);
-}
-
-
-
         body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            overflow: auto;
+            font-family: Arial, sans-serif;
+            background-color: #2b2b2b;
+            overflow: hidden;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        #container {
             position: relative;
-          text-align: center;
+            height: 100vh;
+        }
+
+        #icon, #name, .main, .button-container {
+            opacity: 0;
+            position: absolute;
+            color: #ffffff;
+        }
+
+        #icon {
+            font-size: 3em;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: slideInIcon 1s ease-out 2s forwards;
+        }
+
+        #name {
+            font-size: 2em;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: fadeInName 1s ease-out 2s forwards;
+        }
+
+        .main {
+            font-size: 1.5em;
+            top: 60%; /* Zmieniłem na 60% dla więcej przestrzeni */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: fadeInElement 1s ease-out 5s forwards;
+        }
+
+        .button-container {
+            top: 70%; /* Zmieniłem na 70% dla więcej przestrzeni */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 10px;
+            animation: fadeInButtons 1s ease-out 5s forwards;
+        }
+      
+      .ico {
+        margin-right: 5px;
+      }
+
+        .button {
+            padding: 8px 15px; /* Zmniejszyłem rozmiar przycisków */
+            border: 3px solid #444; /* Dodatkowa ramka */
+            background-color: #565656;
+            color: #ffffff;
+            font-size: 0.6em; /* Zmniejszyłem rozmiar czcionki */
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            opacity: 0.7;
+            border-radius: 8px;
+             display: flex;
+            align-items: center;
+        }
+
+        .button:hover {
+            background-color: #444;
+            border-color: #333;
+        }
+
+        .round {
+            border-radius: 30%;
+            max-width: 100%;
+            height: auto;
         }
 
         h1 {
-            text-align: center;
-            padding-top: 50px;
             font-size: 36px;
             font-family: 'Montserrat', sans-serif;
+            margin-top: 50px;
+        }
+
+        h2 {
+            font-size: 24px;
         }
 
         p {
-            text-align: center;
             font-size: 18px;
         }
 
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
 
+        footer p {
+            margin: 0;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @keyframes slideInIcon {
+            to {
+                opacity: 1;
+                top: 40%;
+            }
+        }
+
+        @keyframes fadeInName {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInElement {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInButtons {
+            to {
+                opacity: 1;
+            }
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #2C2C2C #4E4E4E;
+        }
+
+        *::-webkit-scrollbar {
+            height: 10px;
+            width: 10px;
+        }
+
+        *::-webkit-scrollbar-track {
+            border-radius: 5px;
+            background-color: #4E4E4E;
+        }
+
+        *::-webkit-scrollbar-track:hover {
+            background-color: #494C4D;
+        }
+
+        *::-webkit-scrollbar-track:active {
+            background-color: #65696A;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: #2C2C2C;
+        }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background-color: #383838;
+        }
+
+        *::-webkit-scrollbar-thumb:active {
+            background-color: #3B3B3B;
+        }
 
         #particles-background {
             position: absolute;
@@ -122,91 +202,29 @@
             z-index: -1;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #000;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 14px;
-            color: #fff;
-        }
-
-      .btn {
-        text-align: center;
-      }
-      
-      .button2 {
-        align-items: center;
-  justify-content: center;
-  line-height: 1;
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 18px;
-  border-radius: 15px;
-  width: 200px;
-  height: 50px;
-  font-weight: bold;
-  border: 3px solid #4bc1ff;
-  transition: 0.3s;
-  background-color: #004a51;
-      }
-      .button2:hover {
-  transform: scale(1.05);
-}
-        
-      .button3 {
-          line-height: 1;
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 18px;
-  border-radius: 15px;
-  width: 200px;
-  height: 40px;
-  font-weight: bold;
-  border: 3px solid #656565;
-  transition: 0.3s;
-  background-color: #202020;
-      }
-      
-      .button3:hover {
-          transform: scale(1.05);
-      }
-      
-      .4round {
-        border-radius: 60%;
-      }
     </style>
 </head>
 <body>
-    <div>
-    <h1>roaxx</h1>
-    <p>w3lc 1n my w0r1d</p>
-     <br><br>
-     <div class="button-container">
-       <a class="button2" href="https://t.me/roaxxxx"> <img src="https://static.vecteezy.com/system/resources/previews/018/930/479/original/telegram-logo-telegram-icon-transparent-free-png.png" width="36px"/> Telegram </a> <br>
-        
-      </div>
-      <div class="button-container">
-        <a class="button1" href="https://discord.com/users/388939705464389644"> <img src="https://static.vecteezy.com/system/resources/previews/018/930/718/original/discord-logo-discord-icon-transparent-free-png.png" width="36px"/> Discord</a>
-      </div>
-      <div class="button-container">
-        <a class="button3" href="https://github.com/roaxxxx"> <img class="4round" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width="36px"/> Github </a>
-      </div>
-</div>
-
-    
-    
-        
-            
-                
-    
+    <div id="container">
+        <img id="icon" class="round" src="https://cdn.discordapp.com/attachments/790180476001320960/1189299417489100990/8A39FCAF-DB43-4498-A584-9B1B0990552C.gif" width="96px" height="96px">
+        <h1 id="name">roaxxxx</h1>
+    </div>
+    <div class="main">
+        <div class="button-container">
+            <a class="button" href="https://discord.gg/dolina">
+                <img class="ico" src="https://preview.redd.it/e3q5jovld7p61.png?width=1920&format=png&auto=webp&s=9cd2ac452037c9a6d346279cd14ead25a58ad971" width="18px"> Server
+            </a>
+            <a class="button" href="https://discord.com/users/388939705464389644">
+                <img class="ico" src="https://preview.redd.it/e3q5jovld7p61.png?width=1920&format=png&auto=webp&s=9cd2ac452037c9a6d346279cd14ead25a58ad971" width="18px">
+                Profile
+            </a>
+            <a class="button" href="https://instagram.com/rxaxxo">
+                <img class="ico" src="http://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" width="17px">
+                Instagram
+            </a>
+        </div>
+    </div>
     <div id="particles-background"></div>
-
-
-
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
